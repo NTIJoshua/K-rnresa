@@ -51,3 +51,26 @@ window.addEventListener("scroll", function () {
         headerText.style.opacity = "1";
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.querySelector(".menu");
+    const menuButton = document.querySelector(".menu-button");
+    const fadeLayer = document.querySelector(".fade-layer");
+    const text = document.querySelector(".text");
+    const changeTextColorButton = document.getElementById("changeTextColor");
+
+    // Visa/dölj hamburgermeny
+    const toggleMenu = () => {
+        const isOpen = menu.classList.toggle("show");
+        fadeLayer.classList.toggle("visible", isOpen);
+    };
+
+    // Event listeners
+    menuButton.addEventListener("click", toggleMenu);
+    fadeLayer.addEventListener("click", toggleMenu);
+
+    // Bonus: Ändra textfärg vid klick
+    changeTextColorButton.addEventListener("click", () => {
+        text.style.color = text.style.color === "yellow" ? "black" : "yellow";
+    });
+});
