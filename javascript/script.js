@@ -1,10 +1,14 @@
+// Visa ett resetips
 function visaTips() {
     const tips = [
         "Besök Paris och njut av Eiffeltornet!",
         "Upptäck de fantastiska stränderna i Maldiverna!",
         "Utforska Tokyo och dess futuristiska stadsbild!",
         "Vandra genom de vackra Alperna!",
-        "Njut av kulturen och maten i Rom!"
+        "Njut av kulturen och maten i Rom!",
+        "Gå på en trevlig resa med familj och vänner!",
+        "Upptäck dig själv på en underbar resa!",
+        "Lär känna nya vänner för livet!"
     ];
     
     const randomIndex = Math.floor(Math.random() * tips.length);
@@ -21,43 +25,13 @@ window.addEventListener("scroll", function () {
     }
 });
 
-
-window.addEventListener("scroll", function () {
-    const header = document.getElementById("header");
-    if (window.scrollY > 50) {
-        header.style.transform = "translateY(-10px)";
-        header.style.padding = "10px";
-        header.style.textAlign = "left";
-    } else {
-        header.style.transform = "translateY(0)";
-        header.style.padding = "1000px";
-        header.style.textAlign = "center";
-    }
-});
-
-window.addEventListener("scroll", function () {
-    const header = document.getElementById("header");
-    const headerText = document.getElementById("header-text");
-    if (window.scrollY > 50) {
-        header.style.transform = "translateY(-10px)";
-        header.style.padding = "10px";
-        header.style.textAlign = "left";
-        headerText.style.opacity = "0";
-        headerText.style.transition = "opacity 0.3s ease";
-    } else {
-        header.style.transform = "translateY(0)";
-        header.style.padding = "20px";
-        header.style.textAlign = "center";
-        headerText.style.opacity = "1";
-    }
-});
-
+// Hamburgermeny funktion
 document.addEventListener("DOMContentLoaded", () => {
     const menu = document.querySelector(".menu");
     const menuButton = document.querySelector(".menu-button");
-    const fadeLayer = document.querySelector(".fade-layer");
-    const text = document.querySelector(".text");
-    const changeTextColorButton = document.getElementById("changeTextColor");
+    const fadeLayer = document.createElement('div');
+    fadeLayer.classList.add("fade-layer");
+    document.body.appendChild(fadeLayer);
 
     // Visa/dölj hamburgermeny
     const toggleMenu = () => {
@@ -68,9 +42,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // Event listeners
     menuButton.addEventListener("click", toggleMenu);
     fadeLayer.addEventListener("click", toggleMenu);
-
-    // Bonus: Ändra textfärg vid klick
-    changeTextColorButton.addEventListener("click", () => {
-        text.style.color = text.style.color === "yellow" ? "black" : "yellow";
-    });
 });
