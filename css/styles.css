@@ -1,5 +1,13 @@
 body {
-    margin-top: 10%;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: url('../misc/airplane.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 header {
@@ -31,26 +39,11 @@ header h1 {
 
 .scrolled p {
     font-size: 0rem;
-    margin-left: 0; 
-}
-
-.Places-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(750px, 1fr));
-    gap: 20px;
-    padding: 40px;
-    max-width: 1000px;
-    margin: auto;
-    
-}
-
-.scrolled a {
-    display: none;
+    margin-left: 0;
 }
 
 .nav {
     font-family: Georgia, 'Times New Roman', Times, serif;
-
 }
 
 a {
@@ -59,24 +52,28 @@ a {
     padding: 10px;
 }
 
-/* Responsivitet */
-.hero {
-    margin-top: 20%;
+.scrolled a {
+    display: none;
+}
+
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    margin-top: 50px;
 }
 
 .clearertext {
     text-shadow: 3px 2px 3px black;
 }
 
-
-/* Footer */
-.footer {
-    grid: 'footer';
-}
-
 /* Hamburger menu */
 .menu-button {
     display: none;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 10px;
 }
 
 .menu {
@@ -84,18 +81,34 @@ a {
     justify-content: space-around;
 }
 
+.fade-layer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.fade-layer.visible {
+    display: block;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-    /* Mobilanpassning */
     .menu {
         display: none;
         flex-direction: column;
         align-items: center;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 998;
     }
-
-    button {
-        display:none;
-    }
-
 
     .menu.show {
         display: flex;
@@ -103,24 +116,5 @@ a {
 
     .menu-button {
         display: block;
-        cursor: pointer;
-        font-size: 2rem;
-        padding: 10px;
-    }
-
-    .fade-layer {
-        display: none;
-    }
-
-    .fade-layer.visible {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 999;
     }
 }
-

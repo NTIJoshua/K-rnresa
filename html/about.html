@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kärnresa</title>
-    <link rel="stylesheet" href="../css/home.css">
+    <title>Kärnresa - Om oss</title>
+    <link rel="stylesheet" href="../css/about.css">
     <link rel="icon" type="image/x-icon" href="../misc/Icon.png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta name="description" content="Kärnresa - Din partner för minnesvärda resor. Upptäck Paris, Maldiverna, Tokyo och mer!">
+    <meta name="keywords" content="resor, Paris, Maldiverna, Tokyo, Alperna, Rom, Rio de Janeiro">
+    <meta name="author" content="Kärnresa">
 </head>
 
 <body>
@@ -22,44 +26,79 @@
             </div>
         </nav>
     </header>
-
-    <section class="hero">
-        <div class="hero-content">
-            <button onclick="visaTips()">Få ett resetips</button>
-            <p class="clearertext" id="reseTips">Klicka på knappen för att få ett tips!</p>
+    <section class="about-container">
+        <div class="about-content">
+            <h2>Om Kärnresa</h2>
+            <div class="about-section">
+                <div class="about-image">
+                    <img src="../misc/travel-agency.png" alt="Vårt team" class="team-image">
+                </div>
+                <div class="about-text">
+                    <h3>Vår historia</h3>
+                    <p>Kärnresa grundades 2021 av en grupp passionerade reseentusiaster med över 30 års gemensam erfarenhet i resebranschen. Vår vision var enkel: att skapa minnesvärda reseupplevelser som berör själens kärna - därav namnet "Kärnresa".</p>
+                    <p>Från vårt huvudkontor i Stockholm har vi hjälpt tusentals svenskar att upptäcka världens skönhet, från Paris romantiska gator till Maldivernas kristallklara vatten.</p>
+                    <p>Som en oberoende resebyrå har vi möjlighet att skräddarsy varje resa efter våra kunders önskemål och behov, med personlig service som vår högsta prioritet.</p>
+                </div>
+            </div>
+            
+            <div class="about-section">
+                <div class="about-text">
+                    <h3>Vårt löfte till dig</h3>
+                    <p>På Kärnresa tror vi att resor ska vara mer än bara transport och boende - det ska vara en upplevelse som berikar ditt liv och skapar minnen för livet.</p>
+                    <p>Vi lovar att:</p>
+                    <ul>
+                        <li>Alltid erbjuda personlig service och expertråd</li>
+                        <li>Hitta det bästa värdet för din budget</li>
+                        <li>Vara tillgängliga före, under och efter din resa</li>
+                        <li>Dela våra insidertips för att göra din resa extra speciell</li>
+                        <li>Skräddarsy resor som passar just dina önskemål</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="about-section">
+                <div class="about-text">
+                    <h3>Hållbart resande</h3>
+                    <p>Vi tar vårt ansvar för miljön på allvar. Kärnresa arbetar aktivt för att främja hållbart resande genom att:</p>
+                    <ul>
+                        <li>Samarbeta med miljöcertifierade hotell och transportörer</li>
+                        <li>Stödja lokala gemenskaper på våra destinationer</li>
+                        <li>Erbjuda koldioxidkompensation för flygresor</li>
+                        <li>Minimera pappersanvändning genom digitala resehandlingar</li>
+                    </ul>
+                    <p>För oss handlar resande om respekt - för kulturer, traditioner och inte minst för vår planet.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="testimonials">
+            <h2>Vad våra kunder säger</h2>
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <p>"Kärnresa ordnade vår familjeresa till Tokyo med sådan omtanke och detaljrikedom. Varje moment var perfekt planerat och vi fick uppleva Japan på ett sätt som vi aldrig hade kunnat göra på egen hand."</p>
+                    <p class="customer-name">- Anna Svensson</p>
+                </div>
+                <div class="testimonial">
+                    <p>"Efter att ha rest med Kärnresa till Rom kommer jag aldrig att boka en resa på något annat sätt. Deras kunskap om staden, de bästa restaurangerna och de dolda pärlorna gjorde hela upplevelsen magisk."</p>
+                    <p class="customer-name">- Johan Bergman</p>
+                </div>
+                <div class="testimonial">
+                    <p>"När vårt flyg blev inställt i Paris trodde vi att vår semester var förstörd, men Kärnresa var där för oss 24/7 och ordnade nytt boende och transport inom en timme. Det är service över förväntan!"</p>
+                    <p class="customer-name">- Maria Lindberg</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="destination-grid">
-        <a href="travels.html#Paris" class="destination-box">
-            <img src="../misc/charldegal.jpg" alt="Paris">
-            <h3>Paris</h3>
-            <p>Besök Paris och njut av Eiffeltornet!</p>
-        </a>
-        <a href="travels.html#Maldiverna" class="destination-box">
-            <img src="../misc/travel-background1.jpeg" alt="Maldiverna">
-            <h3>Maldiverna</h3>
-            <p>Upptäck de fantastiska stränderna i Maldiverna!</p>
-        </a>
-        <a href="travels.html#Tokyo" class="destination-box">
-            <img src="../misc/travel-background1.jpeg" alt="Tokyo">
-            <h3>Tokyo</h3>
-            <p>Utforska Tokyo och dess futuristiska stadsbild!</p>
-        </a>
-        <a href="travels.html#Alperna" class="destination-box">
-            <img src="../misc/travel-background1.jpeg" alt="Alperna">
-            <h3>Alperna</h3>
-            <p>Vandra genom de vackra Alperna!</p>
-        </a>
-        <a href="travels.html#Rom" class="destination-box">
-            <img src="../misc/fontanatrevi.jpg" alt="Rom">
-            <h3>Rom</h3>
-            <p>Njut av kulturen och maten i Rom!</p>
-        </a>
-    </section>
-
     <footer>
-        <p class="clearertext">&copy; 2025 Kärnresa. Alla rättigheter förbehållna.</p>
+        <div class="footer-content">
+            <p class="clearertext">&copy; 2025 Kärnresa. Alla rättigheter förbehållna.</p>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+            </div>
+        </div>
     </footer>
 
     <script src="../javascript/script.js"></script>

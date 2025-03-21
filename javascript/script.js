@@ -10,7 +10,7 @@ function visaTips() {
         "Upptäck dig själv på en underbar resa!",
         "Lär känna nya vänner för livet!"
     ];
-    
+
     const randomIndex = Math.floor(Math.random() * tips.length);
     document.getElementById("reseTips").textContent = tips[randomIndex];
 }
@@ -23,6 +23,17 @@ window.addEventListener("scroll", function () {
     } else {
         header.classList.remove("scrolled");
     }
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('.menu a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
 
 // Hamburgermeny funktion
@@ -43,3 +54,29 @@ document.addEventListener("DOMContentLoaded", () => {
     menuButton.addEventListener("click", toggleMenu);
     fadeLayer.addEventListener("click", toggleMenu);
 });
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    if (!name || !email || !message) {
+        alert('Vänligen fyll i alla fält.');
+        return;
+    }
+
+    if (!validateEmail(email)) {
+        alert('Vänligen ange en giltig e-postadress.');
+        return;
+    }
+
+    document.getElementById('contactForm').classList.add('hidden');
+    document.getElementById('formSubmitMessage').classList.remove('hidden');
+});
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+}

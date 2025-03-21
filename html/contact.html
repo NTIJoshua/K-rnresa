@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kärnresa</title>
+    <meta name="description" content="Kärnresa - Din partner för minnesvärda resor. Upptäck Paris, Maldiverna, Tokyo och mer!">
+    <meta name="keywords" content="resor, Paris, Maldiverna, Tokyo, Alperna, Rom, Rio de Janeiro">
+    <meta name="author" content="Kärnresa">
+    <title>Kärnresa - Kontakt</title>
     <link rel="stylesheet" href="../css/contact.css">
     <link rel="icon" type="image/x-icon" href="../misc/Icon.png">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
-
-
 
 <body>
     <header id="header">
@@ -25,45 +27,87 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <button onclick="visaTips()">Få ett resetips</button>
-            <p class="clearertext" id="reseTips">Klicka på knappen för att få ett tips!</p>
+    <section class="contact-container">
+        <div class="contact-info">
+            <h2>Kontakta oss</h2>
+            <p>Vi ser fram emot att hjälpa dig planera din nästa drömresa!</p>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <h3>Telefon</h3>
+                    <p>+46 70 123 45 67</p>
+                </div>
+                <div class="contact-item">
+                    <h3>E-post</h3>
+                    <p>info@karnresa.se</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Adress</h3>
+                    <p>Resevägen 123<br>123 45 Stockholm<br>Sverige</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Öppettider</h3>
+                    <p>Måndag-Fredag: 09:00-18:00<br>Lördag: 10:00-15:00<br>Söndag: Stängt</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Skicka ett meddelande</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Namn</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-post</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefon</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Önskad destination</label>
+                    <select id="destination" name="destination">
+                        <option value="">Välj destination</option>
+                        <option value="Paris">Paris</option>
+                        <option value="Maldiverna">Maldiverna</option>
+                        <option value="Tokyo">Tokyo</option>
+                        <option value="Alperna">Alperna</option>
+                        <option value="Rom">Rom</option>
+                        <option value="Rio">Rio de Janeiro</option>
+                        <option value="other">Annan destination</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Meddelande</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Skicka</button>
+            </form>
+            <div id="formSubmitMessage" class="hidden">Tack för ditt meddelande! Vi återkommer till dig så snart som möjligt.</div>
         </div>
     </section>
 
-    <section class="destination-grid">
-        <a href="travels.html#Paris" class="destination-box">
-            <img src="../misc/travel-background1.jpeg" alt="Paris">
-            <h3>Paris</h3>
-            <p>Besök Paris och njut av Eiffeltornet!</p>
-        </a>
-        <a href="travels.html#Maldiverna" class="destination-box">
-            <img src="../misc/travel-background1.jpeg" alt="Maldiverna">
-            <h3>Maldiverna</h3>
-            <p>Upptäck de fantastiska stränderna i Maldiverna!</p>
-        </a>
-        <a href="travels.html#Tokyo" class="destination-box">
-            <img src="../misc/travel-background1.jpeg" alt="Tokyo">
-            <h3>Tokyo</h3>
-            <p>Utforska Tokyo och dess futuristiska stadsbild!</p>
-        </a>
-        <a href="travels.html#Alperna" class="destination-box">
-            <img src="../misc/travel-background1.jpeg" alt="Alperna">
-            <h3>Alperna</h3>
-            <p>Vandra genom de vackra Alperna!</p>
-        </a>
-        <a href="travels.html#Rom" class="destination-box">
-            <img src="../misc/fontanatrevi.jpg" alt="Rom">
-            <h3>Rom</h3>
-            <p>Njut av kulturen och maten i Rom!</p>
-        </a>
-    </section>
-
     <footer>
-        <p class="clearertext">&copy; 2025 Kärnresa. Alla rättigheter förbehållna.</p>
+        <div class="footer-content">
+            <p class="clearertext">&copy; 2025 Kärnresa. Alla rättigheter förbehållna.</p>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+            </div>
+        </div>
     </footer>
 
     <script src="../javascript/script.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('contactForm').classList.add('hidden');
+            document.getElementById('formSubmitMessage').classList.remove('hidden');
+        });
+    </script>
 </body>
 </html>
