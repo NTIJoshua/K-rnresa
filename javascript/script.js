@@ -1,3 +1,5 @@
+// script.js
+
 // Visa ett resetips
 function visaTips() {
     const tips = [
@@ -25,14 +27,17 @@ window.addEventListener("scroll", function () {
     }
 });
 
-// Smooth scrolling for navigation links
+// Smooth scrolling for internal links only
 document.querySelectorAll('.menu a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
         const targetId = this.getAttribute('href');
-        document.querySelector(targetId).scrollIntoView({
-            behavior: 'smooth'
-        });
+        if (targetId.startsWith('#')) {
+            e.preventDefault();
+            document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        // External links will work as normal
     });
 });
 
@@ -55,7 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
     fadeLayer.addEventListener("click", toggleMenu);
 });
 
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+// Contact form validation
+document.getElementById('contactForm')?.addEventListener('submit', function(e) {
     e.preventDefault();
 
     const name = document.getElementById('name').value;
