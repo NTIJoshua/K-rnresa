@@ -36,8 +36,6 @@ header h1 {
 }
 
 .Places-grid {
-    /* display: grid; */
-    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); Adjusted for better responsiveness */
     gap: 20px;
     padding: 40px;
     max-width: 600px;
@@ -78,11 +76,11 @@ header h1 {
     display: none;
 }
 
-.nav {
+.nav { /*gör navbar till times new roman font*/
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-a {
+a { /*links*/
     color: yellow;
     text-decoration: none;
     padding: 10px;
