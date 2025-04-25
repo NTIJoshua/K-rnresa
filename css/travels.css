@@ -1,6 +1,5 @@
-/* travels.css */
 body {
-    margin-top: 10%;
+    margin-top: 20%;
 }
 
 header {
@@ -12,40 +11,32 @@ header {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
     z-index: 1000;
-}
-
-header h1 {
-    font-size: 2rem;
-    transition: all 0.3s ease;
-    text-shadow: gold 1px 1px;
-}
-
-.scrolled {
     padding: 10px;
     text-align: left;
 }
 
-.scrolled h1 {
+header h1 {
     font-size: 1.5rem;
     margin-left: 20px;
+    transition: all 0.3s ease;
+    text-shadow: gold 1px 1px;
 }
 
-.scrolled p {
-    font-size: 0rem;
-    margin-left: 0; 
+header p {
+    font-size: 0;
+    margin-left: 0;
 }
 
 .Places-grid {
     gap: 20px;
-    padding: 40px;
-    max-width: 600px;
+    padding: 20px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    
 }
 
 .destination-content {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-content: center;
     text-align: center;
@@ -56,11 +47,10 @@ header h1 {
     height: auto;
     border-radius: 10px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-    
 }
 
 .destination-info {
-    max-width: 800px;
+    max-width: 100%;
     margin-top: 20px;
     background: rgba(0, 0, 0, 0.7);
     padding: 20px;
@@ -72,21 +62,16 @@ header h1 {
     margin-top: 20px;
 }
 
-.scrolled a {
-    display: none;
-}
-
-.nav { /*gör navbar till times new roman font*/
+.nav {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-a { /*links*/
+a {
     color: yellow;
     text-decoration: none;
     padding: 10px;
 }
 
-/* Responsivitet */
 .hero {
     margin-top: 20%;
 }
@@ -95,56 +80,96 @@ a { /*links*/
     text-shadow: 3px 2px 3px black;
 }
 
-/* Footer */
-.footer {
-    grid: 'footer';
-}
-
 /* Hamburger menu */
 .menu-button {
-    display: none;
+    display: block;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 10px;
 }
 
 .menu {
-    display: flex;
-    justify-content: space-around;
+    display: none;
+    flex-direction: column;
+    align-items: center;
 }
 
-@media (max-width: 768px) {
-    /* Mobilanpassning */
-    .menu {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-    }
+.menu.show {
+    display: flex;
+}
 
-    button {
-        display:none;
-    }
+button {
+    display: none;
+}
 
-    .menu.show {
-        display: flex;
-    }
+.fade-layer {
+    display: none;
+}
 
-    .menu-button {
-        display: block;
-        cursor: pointer;
+.fade-layer.visible {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Media queries for larger screens */
+@media (min-width: 769px) {
+    body {
+        margin-top: 10%;
+    }
+    
+    header {
+        text-align: center;
+    }
+    
+    header h1 {
         font-size: 2rem;
-        padding: 10px;
     }
-
-    .fade-layer {
+    
+    .Places-grid {
+        padding: 40px;
+        max-width: 600px;
+    }
+    
+    .destination-info {
+        max-width: 800px;
+    }
+    
+    .scrolled {
+        padding: 10px;
+        text-align: left;
+    }
+    
+    .scrolled h1 {
+        font-size: 1.5rem;
+        margin-left: 20px;
+    }
+    
+    .scrolled p {
+        font-size: 0;
+        margin-left: 0;
+    }
+    
+    .scrolled a {
         display: none;
     }
-
-    .fade-layer.visible {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 999;
+    
+    .menu-button {
+        display: none;
+    }
+    
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    button {
+        display: inline-block;
     }
 }

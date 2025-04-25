@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background: no-repeat center center fixed;
-    background-size:cover;
+    background-size: cover;
     color: white;
     background-image: url('../misc/airplane.jpg');
     margin: 0;
@@ -20,26 +20,19 @@ header {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
     z-index: 1000;
-}
-
-header h1 {
-    font-size: 2rem;
-    transition: all 0.3s ease;
-    text-shadow: gold 1px 1px;
-}
-
-.scrolled {
     padding: 10px;
     text-align: left;
 }
 
-.scrolled h1 {
+header h1 {
     font-size: 1.5rem;
     margin-left: 20px;
+    transition: all 0.3s ease;
+    text-shadow: gold 1px 1px;
 }
 
-.scrolled p {
-    font-size: 0rem;
+header p {
+    font-size: 0;
     margin-left: 0;
 }
 
@@ -53,13 +46,8 @@ a {
     padding: 10px;
 }
 
-.scrolled a {
-    display: none;
-}
-
-
 ul {
-    list-style-type:none;
+    list-style-type: none;
 }
 
 /* Footer */
@@ -70,20 +58,31 @@ footer {
 }
 
 .clearertext {
-    text-shadow: 3px 2px 3px black;
+    display:none;
 }
 
 /* Hamburger menu */
 .menu-button {
-    display: none;
+    display: block;
     cursor: pointer;
     font-size: 2rem;
     padding: 10px;
 }
 
 .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 998;
+}
+
+.menu.show {
     display: flex;
-    justify-content: space-around;
 }
 
 .fade-layer {
@@ -101,25 +100,50 @@ footer {
     display: block;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .menu {
+/* Responsive design for larger screens */
+@media (min-width: 769px) {
+    header {
+        text-align: center;
+        padding: normal;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .scrolled {
+        padding: 10px;
+        text-align: left;
+    }
+    
+    .scrolled h1 {
+        font-size: 1.5rem;
+        margin-left: 20px;
+    }
+    
+    .scrolled p {
+        font-size: 0rem;
+        margin-left: 0;
+    }
+    
+    .scrolled a {
         display: none;
-        flex-direction: column;
-        align-items: center;
-        position: fixed;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        z-index: 998;
     }
-
-    .menu.show {
-        display: flex;
-    }
-
+    
     .menu-button {
-        display: block;
+        display: none;
+    }
+    
+    .menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background: transparent;
+        justify-content: space-around;
+    }
+
+    .clearertext {
+        text-shadow: 3px 2px 3px black;
+        display:block;
     }
 }

@@ -1,6 +1,6 @@
-/* about.css */
+/* about.css - Mobile First */
 body {
-    margin-top: 50%;
+    margin-top: 100px;
 }
 
 h2 {
@@ -8,8 +8,8 @@ h2 {
 }
 
 .about-container {
-    max-width: 1200px;
-    margin: 150px auto 50px;
+    max-width: 100%;
+    margin: 30px auto 50px;
     padding: 20px;
 }
 
@@ -25,18 +25,17 @@ h2 {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    
 }
 
 .about-image img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .about-text {
-    max-width: 800px;
+    max-width: 100%;
     margin-top: 20px;
     list-style-type: none;
     background: rgba(0, 0, 0, 0.7);
@@ -52,7 +51,7 @@ h2 {
 
 .testimonial-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
 }
 
@@ -68,13 +67,21 @@ h2 {
     margin-top: 10px;
 }
 
-/* Responsivitet */
-@media (max-width: 768px) {
-    .about-section {
-        flex-direction: column;
+/* Media queries for larger screens */
+@media (min-width: 769px) {
+    body {
+        margin-top: 50%;
     }
-
-    .about-image img {
-        width: 100%;
+    
+    .about-container {
+        max-width: 1200px;
+    }
+    
+    .about-text {
+        max-width: 800px;
+    }
+    
+    .testimonial-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 }
